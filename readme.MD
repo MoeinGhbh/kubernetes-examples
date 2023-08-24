@@ -3,6 +3,7 @@ Kubernetes command:
 kubectl get all
 
 -----------------------------------Pod------------------
+
 pod.yaml
 command:
 
@@ -10,6 +11,7 @@ kubectl apply -f pod.yaml
 kubectl get pods
 kubectl describe pod nginx
 
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -23,13 +25,18 @@ spec:
         image: redis
         - name: busybox
         imge: busybox
+```
 
---------------------------ReplicationController-------------------
+--------------------------ReplicationController-----------
+
+
+
 replicaset-definition.yml
 
 kubectl create -f replicaset-definition.yml
 kubectl get replicationcontroller
 
+```
 apiVersion: v1
 kind: replicationController
 metadata:
@@ -49,6 +56,7 @@ spec:
     containers:
         - name: name
           image: nginx
+```
 
 ------------------------------Replicaset----------------------
 
@@ -67,6 +75,7 @@ kubectl replace -f replicaset-definition.yml
 kubectl scale --replicas=6 -f replicaset-definition.yml
 kubectl scale --repicas=6 replicaset myapp-replicaset (type-name )
 
+```
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
@@ -89,8 +98,9 @@ spec:
         containers:
             - name: nginx-container
               image: nginx
-
+```
 ---------------------------------Deployment--------------------
+
 deployment.yaml
 
 Command:
@@ -99,6 +109,7 @@ kubectl create -f deployment-definition.yml
 kubectl get deployments
 kubectl describe deployment name-deployment-app
 
+```
 apiVersion: apps/v1
 Kind: deployment
 metadata:
@@ -121,7 +132,7 @@ spec:
 containers:
     - name: forntend4
       image: redis
-
+```
 
 ----------------------------------------------------------
 
