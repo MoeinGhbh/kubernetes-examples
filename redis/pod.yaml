@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: my-app
+    labels:
+      label: redis-message-broker
+spec:
+  containers:
+    - name: redis-app
+      image: redis
